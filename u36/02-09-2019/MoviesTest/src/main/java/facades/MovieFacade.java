@@ -47,12 +47,12 @@ public class MovieFacade {
 //        
 //    }
     
-    public String getMovieName(long id) {
-        EntityManager em = getEntityManager();
-        try {
-            String movieName = em.createNamedQuery("SELECT movie");
-        }
-    }
+//    public String getMovieName(long id) {
+//        EntityManager em = getEntityManager();
+//        try {
+//            //String movieName = em.createNamedQuery("SELECT movie");
+//        }
+//    }
     
     public Movie makeMovie(Movie movie) {
         EntityManager em = getEntityManager();

@@ -75,9 +75,9 @@ public class MovieFacadeTest {
     }
 
     // TODO: Delete or change this method 
-    @Test
-    public void testAFacadeMethod() {
-        assertEquals(2, facade.getRenameMeCount(), "Expects two rows in the database");
-    }
+//    @Test
+//    public void testAFacadeMethod() {
+//        assertEquals(2, facade, "Expects two rows in the database");
+//    }
 
 }
