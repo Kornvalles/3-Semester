@@ -91,7 +91,6 @@ public class PersonResource {
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
     public String getAll() {
-        //TODO return proper representation object
         return gson.toJson(persons.values());
     }
 
@@ -123,7 +122,6 @@ public class PersonResource {
     @Path("{id}")
     public String delete(@PathParam("id") int id) {
         persons.remove(id);
-        
         return "{\"status\":\"OK\"}";
     }
     
