@@ -17,17 +17,17 @@ public class Address implements Serializable {
     private String street;
     private String city;
     
-//    //relations
-//    @OneToOne(mappedBy = "address")
-//    private Customer customer;
-//    
-//    public Customer getCustomer() {
-//        return customer;
-//    }
-//    
-//    public void setCustomer(Customer customer) {
-//        this.customer = customer;
-//    }
+    //relations
+    @OneToOne
+    private Customer customer;
+    
+    public Customer getCustomer() {
+        return customer;
+    }
+    
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Address(String street, String city) {
         this.street = street;

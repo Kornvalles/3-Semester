@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "/Users/mikkel/Documents/GitHub/SVG"
+		},
+		{
+			"path": "/Users/mikkel/Documents Local/3_Semester Review/u36/05-09-2019"
+		}
+	],
+	"settings": {
+		"java.completion.guessMethodArguments": true,
+		"maven.view": "hierarchical"
+	}
+}
