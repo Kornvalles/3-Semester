@@ -16,17 +16,31 @@ public class OrderLine implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
+    private int Quantity;
     @ManyToOne
-    private Order order;
+    private ItemType itemType;
 
+    public int getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(int Quantity) {
+        this.Quantity = Quantity;
+    }
+
+    public ItemType getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
+    }
+    
     public OrderLine() {
     }
     
-    
-
     public Integer getId() {
         return id;
     }
