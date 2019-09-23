@@ -2,12 +2,13 @@ package facade;
 
 import entity.Customer;
 import entity.ItemType;
-import entity.Order;
+import entity.Orders;
 import entity.OrderLine;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 /**
@@ -16,7 +17,7 @@ import javax.persistence.TypedQuery;
  */
 public class Facade {
 
-    private static EntityManagerFactory emf;
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 
     public Customer addCustomer(Customer newCustomer) {
         EntityManager em = emf.createEntityManager();
@@ -72,7 +73,7 @@ public class Facade {
         }
     }
 
-    public Order addOrder(Order order, Customer cust) {
+    public Orders addOrder(Orders order, Customer cust) {
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
@@ -85,7 +86,7 @@ public class Facade {
         }
     }
 
-    public OrderLine addOrderLine(OrderLine oline, ItemType item, Order order) {
+    public OrderLine addOrderLine(OrderLine oline, ItemType item, Orders order) {
         EntityManager em = emf.createEntityManager();
         oline.setItemType(item);
         List<OrderLine> orderLines = new ArrayList();
@@ -101,10 +102,10 @@ public class Facade {
         }
     }
     
-    public List<Order> getAllOrders(Customer cust) {
+    public List<Orders> getAllOrders(Customer cust) {
         EntityManager em = emf.createEntityManager();
         try {
-            TypedQuery<Order> query = em.createNamedQuery("SELECT o FROM Order o WHERE Order.Customer = " + cust.getName(), Order.class);
+            TypedQuery<Orders> query = em.createNamedQuery("SELECT o FROM Order o WHERE Order.Customer = " + cust.getName(), Orders.class);
             return query.getResultList();
         } finally {
             em.close();

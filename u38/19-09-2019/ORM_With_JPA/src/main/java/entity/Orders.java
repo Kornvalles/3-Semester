@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
  * @author mikkel
  */
 @Entity
-public class Order implements Serializable {
+public class Orders implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -26,7 +26,7 @@ public class Order implements Serializable {
     @OneToMany
     private List<OrderLine> orderLine;
 
-    public Order(Customer customer, List<OrderLine> orderLine) {
+    public Orders(Customer customer, List<OrderLine> orderLine) {
         this.customer = customer;
         this.orderLine = orderLine;
     }
@@ -55,7 +55,7 @@ public class Order implements Serializable {
         this.orderLine = orderLine;
     }
     
-    public Order() {
+    public Orders() {
     }
     
     public Integer getId() {

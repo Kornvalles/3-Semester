@@ -22,7 +22,7 @@ public class Customer implements Serializable {
     private String name;
     private String email;
     @OneToMany
-    private List<Order> orders;
+    private List<Orders> orders;
     
     public String getName() {
         return name;
@@ -40,11 +40,11 @@ public class Customer implements Serializable {
         this.email = email;
     }
 
-    public List<Order> getOrders() {
+    public List<Orders> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<Orders> orders) {
         this.orders = orders;
     }
 
