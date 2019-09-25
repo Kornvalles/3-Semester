@@ -8,3 +8,11 @@ document.getElementById("myButton").addEventListener("click", function() {
             document.getElementById("myDiv").innerHTML = data.joke
         })
 })
+
+setInterval(() => {
+    fetch('https://studypoints.info/jokes/api/jokes/period/hour')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("myDiv").innerHTML = data.joke
+        })
+}, 3600000);
