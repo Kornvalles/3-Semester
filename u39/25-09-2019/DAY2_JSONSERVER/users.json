@@ -90,6 +90,13 @@
       "name": "Baker Pratt",
       "gender": "male",
       "email": "bakerpratt@jumpstack.com"
+    },
+    {
+      "age": "26",
+      "name": "Mikkel Kornval",
+      "gender": "male",
+      "email": "mail@mikkel.dk",
+      "id": 113
     }
   ]
 }
