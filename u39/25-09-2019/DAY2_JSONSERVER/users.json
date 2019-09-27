@@ -95,8 +95,15 @@
       "age": "26",
       "name": "Mikkel Kornval",
       "gender": "male",
-      "email": "mail@mikkel.dk",
+      "email": "mikkel@mail.dk",
       "id": 113
+    },
+    {
+      "age": 23,
+      "name": "Nicklas Dupont",
+      "gender": "male",
+      "email": "peters@pan.com",
+      "id": 114
     }
   ]
 }
