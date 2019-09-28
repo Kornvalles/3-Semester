@@ -13,4 +13,9 @@
 ## Thursday
 
 * All Done!
-* [CORS and Single Page Application](
+* [CORS and Single Page Application](https://github.com/Kornvalles/3-Semester/tree/master/u39/26-09-2019)
+
+## Friday
+
+* First exam prep almost done
+* [Exam Preparation](https://github.com/Kornvalles/3-Semester/tree/master/u39/27-09-2019/EUROPA_MAP)
