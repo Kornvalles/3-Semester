@@ -43,7 +43,7 @@ function handleSelect(event) {
       app = <App2 />;
       break;
     case "IntervalCount":
-      app = <IntervalCount />;
+      app = <IntervalCount props={0} />;
       break;
   }
   ReactDOM.render(<DontUseMeForReal />, document.getElementById("root"));

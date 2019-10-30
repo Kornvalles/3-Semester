@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import App from './App';
 
 //useState - Change what is shown
 //useEffect - Always run after render()
-export default function IntervalCount() {
-    const [count, setCount] = useState(0);
+function IntervalCount(props) {
+    const { count, setCount } = props;
     const [negativeCount, setNegativeCount] = useState(false);
     const [startCount, setStartCount] = useState(false);
     //Incrementing
@@ -50,3 +51,5 @@ export default function IntervalCount() {
         </div>
     )
 }
+
+export default App;
