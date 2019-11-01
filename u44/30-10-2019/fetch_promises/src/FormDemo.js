@@ -3,14 +3,14 @@ import React, { useState } from "react";
 const NameForm = () => {
     const [name, setName] = useState("");
 
-    const handleChange = (event) => {
+    function handleChange(event) {
         const target = event.target;
         //const id = target.id;
         const value = target.value;
         setName({ value });
         console.log(JSON.stringify(name))
     }
-    const handleSubmit = (event) => {
+    function handleSubmit(event) {
         event.preventDefault();
         console.log(JSON.stringify(name))
         window.alert(JSON.stringify(name))

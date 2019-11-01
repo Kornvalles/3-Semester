@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import FormDemo from './FormDemo';
+import FormDemoMultiple from './FormDemoMultiple';
 
 let app = <App />;
 
@@ -11,13 +12,17 @@ const DontUseMeForReal = () => {
         <div className="App" onClick={handleSelect}>
             <a href="/" className="x" id="app1">
                 App
-      </a>{" "}
+        </a>{" "}
             &nbsp;
-      <a href="/" className="x" id="app2">
+        <a href="/" className="x" id="app2">
                 FormDemo
-      </a>{" "}
+        </a>{" "}
             &nbsp;
-      {/* Add as many as you have exercises, but remember className="x" */}
+        <a href="/" className="x" id="app3">
+                FormDemoMultiple
+        </a>{" "}
+            &nbsp;
+        {/* Add as many as you have exercises, but remember className="x" */}
             {app}
         </div>
     );
@@ -36,6 +41,9 @@ function handleSelect(event) {
             break;
         case "app2":
             app = <FormDemo />;
+            break;
+        case "app3":
+            app = <FormDemoMultiple />;
             break;
     }
     ReactDOM.render(<DontUseMeForReal />, document.getElementById("root"));
