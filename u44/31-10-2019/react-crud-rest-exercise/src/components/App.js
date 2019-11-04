@@ -8,8 +8,15 @@ function App({apiFacade}) {
   const [personToAddEdit, setPersonToAddEdit] = useState(emptyPerson);
   const [persons, setPersons] = useState([]);
 
+  const fetch = apiFacade.getPersons().then(data =>
+    setPersons(data)
+  );
+
   useEffect(() => {
     //This would be a great place to fetch data (all persons) from the backend
+    apiFacade.getPersons().then(data =>
+      setPersons(data)
+    })
   });
 
   const storeAddEditPerson = (person) => {

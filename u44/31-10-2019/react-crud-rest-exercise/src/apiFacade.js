@@ -45,5 +45,5 @@ function apiFacade() {
   };
 }
 const returnValue = apiFacade();
-export returnValue;
+export default returnValue;
 

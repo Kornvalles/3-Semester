@@ -1,6 +1,6 @@
-
 # Created by https://www.gitignore.io/api/macos,windows,netbeans,java-web
 # Edit at https://www.gitignore.io/?templates=macos,windows,netbeans,java-web
+node_modules/
 
 ### Java-Web ###
 ## ignoring target file
