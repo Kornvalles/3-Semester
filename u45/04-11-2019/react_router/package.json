@@ -1,5 +1,5 @@
 {
-  "name": "route_demo",
+  "name": "react_router",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,6 +28,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "http://kornvalles.github.io/route_demo"
+  }
 }
