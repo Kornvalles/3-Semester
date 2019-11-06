@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {
   Switch,
@@ -8,6 +8,8 @@ import {
   useRouteMatch,
   useParams
 } from 'react-router-dom';
+
+
 
 function App(props) {
   return (
@@ -42,7 +44,7 @@ const Content = (props) => {
         <Company />
       </Route>
       <Route path="/add-book">
-        <AddBook />
+        <AddBook bookFacade={props.bookFacade} />
       </Route>
       <Route>
         <NoMatch />
@@ -64,14 +66,14 @@ const Products = ({ bookFacade }) => {
         </thead>
         <tbody>
           {books.map((book) => {
-              return (
-                <tr key={book.id}>
-                  <td><Link to={`${match.url}/${book.id}`}>{book.id}</Link></td>
-                  <td>{book.title}</td>
-                  <td>{book.info}</td>
-                </tr>
-              )
-            })
+            return (
+              <tr key={book.id}>
+                <td><Link to={`${match.url}/${book.id}`}>{book.id}</Link></td>
+                <td>{book.title}</td>
+                <td>{book.info}</td>
+              </tr>
+            )
+          })
           }
         </tbody>
       </table>
@@ -83,16 +85,40 @@ const Products = ({ bookFacade }) => {
 }
 const Company = () => <div>Company</div>
 const AddBook = ({ bookFacade }) => {
+  const intialValue = { id: null, title: "", info: "" };
+  const [book, setBook] = useState(intialValue);
   const handleSubmit = evt => {
-
+    evt.preventDefault();
+    bookFacade.addBook(book);
+    setBook(intialValue)
   }
+  const handleChange = event => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    setBook({ ...book, [name]: value });
+  };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <label>
         Title:
-        <input type="text" name="title" placeholder="Add title" />
+      <input
+          type="text"
+          value={book.title}
+          name="title"
+          placeholder="Add title"
+          onChange={handleChange}
+          required />
+      </label>
+      <label>
         Info:
-        <input type="text" name="info" placeholder="Add info" />
+      <input
+          type="text"
+          name="info"
+          value={book.info}
+          placeholder="Add info"
+          onChange={handleChange}
+          required />
       </label>
       <input type="submit" value="Save" />
     </form>
@@ -103,7 +129,7 @@ const Book = () => {
   let { bookId } = useParams();
   return (
     <div>
-      Book with id: { bookId }
+      Book with id: {bookId}
     </div>
   )
 }
