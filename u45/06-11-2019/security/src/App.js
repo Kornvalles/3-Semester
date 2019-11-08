@@ -30,7 +30,9 @@ class LoggedIn extends Component {
    super(props);
    this.state= {dataFromServer: "Fetching!!"};
  }
- componentDidMount(){}
+ componentDidMount(){
+  facade.fetchData().then(res=> this.setState({dataFromServer: res.msg}));
+ }
  render() {
    return (
      <div>
