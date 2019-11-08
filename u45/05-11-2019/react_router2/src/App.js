@@ -53,7 +53,7 @@ const Content = (props) => {
   );
 }
 
-const Home = () => <div>Home</div>
+const Home = () => <h1>Welcome to the Book Store!</h1>
 const Products = ({ bookFacade }) => {
   const books = bookFacade.getBooks();
   let match = useRouteMatch();
