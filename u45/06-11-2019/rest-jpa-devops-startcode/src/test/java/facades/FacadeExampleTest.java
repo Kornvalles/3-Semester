@@ -17,12 +17,12 @@ import utils.EMF_Creator.Strategy;
 
 //Uncomment the line below, to temporarily disable this test
 @Disabled
-public class FacadeExampleTest {
+public class RentalFacadeTest {
 
     private static EntityManagerFactory emf;
     private static FacadeExample facade;
 
-    public FacadeExampleTest() {
+    public RentalFacadeTest() {
     }
 
     //@BeforeAll
