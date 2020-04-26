@@ -85,12 +85,12 @@ const Products = ({ bookFacade }) => {
 }
 const Company = () => <div>Company</div>
 const AddBook = ({ bookFacade }) => {
-  const intialValue = { id: null, title: "", info: "" };
-  const [book, setBook] = useState(intialValue);
+  const initialValue = { id: null, title: "", info: "" };
+  const [book, setBook] = useState(initialValue);
   const handleSubmit = evt => {
     evt.preventDefault();
     bookFacade.addBook(book);
-    setBook(intialValue)
+    setBook(initialValue)
   }
   const handleChange = event => {
     const target = event.target;
